@@ -1,0 +1,28 @@
+.h1{
+    text-align: center;
+}
+.cover{
+    display: flex;
+    justify-content: space-between;
+   text-align: center;
+   width: 90%;
+   max-width: 40rem;
+   margin: 1rem auto;
+   padding: 1rem;
+   background-color: white;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+.cover li{
+    font-size: 25px;
+    list-style-type: none;
+}
+.div{
+    display: flex;
+    flex: 1;
+    max-width: 30%;
+    justify-content: space-between;
+}
+.cover .delete{
+    cursor: pointer;
+    font-size: 15px;
+}

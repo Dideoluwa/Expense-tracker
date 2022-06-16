@@ -1,0 +1,41 @@
+.cover{
+    width: 90%;
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+.h1{
+    text-align: center;
+}
+
+.text {
+    margin: 1rem 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.text label{
+    font-size: 23px;
+}
+
+.text label,
+.text input {
+    display: block;
+}
+.text input {
+    flex: 3;
+    font: inherit;
+    /* width: 50%; */
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.button{
+    border: none;
+    width: 30%;
+    padding: 10px 3px;
+    cursor: pointer;
+    background-color: rgb(94, 68, 68);
+}
