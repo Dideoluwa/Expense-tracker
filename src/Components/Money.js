@@ -1,20 +1,28 @@
-import React, { useContext } from 'react'
-import TransactionContext from './context/context'
+// import React, { useContext } from 'react'
+// import TransactionContext from './context/context'
 import styles from './Money.module.css'
+import { useSelector } from 'react-redux'
 
 function Money() {
-    let { transactions } = useContext(TransactionContext)
+    // let { transactions } = useContext(TransactionContext)
 
-    const amounts = transactions.map(transaction => transaction.amount);
+    let transactionAmount = useSelector(state => state.transaction.transactions)
+
+
+
+    const amounts = transactionAmount.map(transaction => transaction.amount);
 
     const income = amounts
-    .filter(item => item > 0)
-    .reduce((acc, item) => (acc += item), 0);
+        .filter(item => item > 0)
+        .reduce((acc, item) => (acc += item), 0);
 
-  const expense = (
-    amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *
-    -1
-  );
+    const expense = (
+        amounts
+            .filter(item => item < 0)
+            .reduce((acc, item) => (acc -= item), 0) *
+        -1
+    );
+
     return (
         <div className={styles.money}>
             <div>

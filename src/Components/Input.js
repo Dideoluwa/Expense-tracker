@@ -1,6 +1,8 @@
-import React, {useState , useReducer , useContext} from 'react'
-import TransactionContext from './context/context'
+import React, {useState , useReducer } from 'react'
+// import TransactionContext from './context/context'
 import styles from './Input.module.css'
+import { useDispatch } from 'react-redux'
+import { transactionActions } from './store/Index'
 
 let textReducer = (state , action) =>{
    if(action.type === 'textInput'){
@@ -17,7 +19,8 @@ let amountReducer = (state , action) =>{
  }
 
 function Input(props) {
-    let { addTransaction } = useContext(TransactionContext)
+let dispatch = useDispatch()
+    // let { addTransaction } = useContext(TransactionContext)
     let [formIsValid , setFormIsValid] = useState(false)
     const [text, setText] = useState('');
     const [amount, setAmount] = useState('');
@@ -40,13 +43,18 @@ function Input(props) {
       setText('')
       setFormIsValid(false)
 
-      const newTransaction = {
+      dispatch(transactionActions.addExpenses({
         id: Math.floor(Math.random() * 100000000),
-        text,
-        amount: +amount
-      }
+        title : text,
+        amount : +amount 
+      }))
+    //   const newTransaction = {
+    //     id: Math.floor(Math.random() * 100000000),
+    //     text,
+    //     amount: +amount
+    //   }
   
-      addTransaction(newTransaction);
+    //   addTransaction(newTransaction);
     }
 
     let textChangeHandler = (e) =>{

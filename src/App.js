@@ -1,6 +1,6 @@
 import React from "react";
 import Balance from "./Components/Balance";
-import ContextProvider from "./Components/context/ContextProvider";
+// import ContextProvider from "./Components/context/ContextProvider";
 import Header from "./Components/Header";
 import History from "./Components/History";
 import Input from "./Components/Input";
@@ -9,7 +9,7 @@ import Money from "./Components/Money";
 function App() {
 
   return (
-    <ContextProvider>
+    // <ContextProvider>
     <div>
       <Header />
       <Balance />
@@ -17,7 +17,7 @@ function App() {
       <Money />
       <Input />
     </div>
-    </ContextProvider>
+    // </ContextProvider>
   );
 }
 
